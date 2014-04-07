@@ -4,16 +4,17 @@
 #
 class radius::params {
 
-  $package_ensure = 'present'
-  $service_enable = true
-  $service_ensure = 'running'
-  $service_manage = true
+  $package_ensure  = 'present'
+  $service_enable  = true
+  $service_ensure  = 'running'
+  $service_manage  = true
+  $config_template = 'radius/radiusd.conf.erb'
 
   case $::osfamily {
     'Debian': {
       $package_name = ['freeradius']
       $service_name = 'freeradius'
-      $config       = '/etc/freeradius'
+      $config_file  = '/etc/freeradius/radiusd.conf'
     }
     default: {
       fail("The ${::module_name} module is not supported on ${::operatingsystem}.")
