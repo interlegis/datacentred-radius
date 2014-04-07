@@ -8,7 +8,7 @@ class radius::service inherits radius {
       ensure     => $radius::service_ensure,
       enable     => $radius::service_enable,
       name       => $radius::service_name,
-      hasstatus  => true,
+      hasstatus  => false,
       hasrestart => true,
     }
   }
