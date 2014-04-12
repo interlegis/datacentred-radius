@@ -17,7 +17,7 @@ class radius::params {
       $config_file  = '/etc/freeradius/radiusd.conf'
     }
     default: {
-      fail("The ${::module_name} module is not supported on ${::operatingsystem}.")
+      fail("${::module_name} is not supported on ${::operatingsystem}.")
     }
   }
 

@@ -1,4 +1,4 @@
-# == Class: radius::params
+# == Class: radius::service
 #
 # Manage the radius service
 #
