@@ -1,16 +1,13 @@
-radius
+# Radius
 
 This is the radius module.
 
-License
--------
+# License
 
 
-Contact
--------
+# Contact
 
 
-Support
--------
+# Support
 
 Please log tickets and issues at our [Projects site](http://projects.example.com)
