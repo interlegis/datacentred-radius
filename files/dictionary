@@ -1,0 +1,2 @@
+# Include shared freeradius dictionaries
+$INCLUDE /usr/share/freeradius/dictionary

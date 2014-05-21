@@ -8,8 +8,6 @@ class radius (
   $service_name    = $radius::params::service_name,
   $service_enable  = $radius::params::service_enable,
   $service_ensure  = $radius::params::service_ensure,
-  $config_file     = $radius::params::config_file,
-  $config_template = $radius::params::config_template
 ) inherits radius::params {
 
   anchor { 'radius::begin': } ->

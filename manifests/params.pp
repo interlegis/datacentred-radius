@@ -8,13 +8,14 @@ class radius::params {
   $service_enable  = true
   $service_ensure  = 'running'
   $service_manage  = true
-  $config_template = 'radius/radiusd.conf.erb'
 
   case $::osfamily {
     'Debian': {
-      $package_name = ['freeradius']
-      $service_name = 'freeradius'
-      $config_file  = '/etc/freeradius/radiusd.conf'
+      $package_name    = 'freeradius'
+      $service_name    = 'freeradius'
+      $config          = '/etc/freeradius'
+
+      $ldap_module_package_name = 'freeradius-ldap'
     }
     default: {
       fail("${::module_name} is not supported on ${::operatingsystem}.")

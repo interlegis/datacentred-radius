@@ -1,0 +1,23 @@
+server <%= @name %> {
+  listen {
+    ipaddr = 0.0.0.0
+    port   = 0
+    type   = auth
+  }
+
+  client 0.0.0.0/0 {
+    secret = testing123
+  }
+
+  authorize {
+    ldap
+  }
+
+  authenticate {
+    ldap
+  }
+
+  post-auth {
+    ldap
+  }
+}
