@@ -1,0 +1,19 @@
+server <%= @name %> {
+
+  authorize {
+  <% @authorize.each do |i| -%>
+  <%= i.to_s %>
+  <%-  end -%>
+  }
+
+  authenticate {
+  <% @authenticate.each do |i| -%>
+  <%= i.to_s %>
+  <%- end -%>
+  }
+
+  post-auth {
+  <% @post_auth.each do |i| -%>
+  <%= i.to_s %>
+  <%- end -%>
+  }
