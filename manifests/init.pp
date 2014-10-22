@@ -8,6 +8,7 @@ class radius (
   $service_name    = $radius::params::service_name,
   $service_enable  = $radius::params::service_enable,
   $service_ensure  = $radius::params::service_ensure,
+  $vhosts          = {},
 ) inherits radius::params {
 
   anchor { 'radius::begin': } ->
@@ -15,4 +16,6 @@ class radius (
   class { '::radius::config': } ~>
   class { '::radius::service': } ->
   anchor { 'radius::end': }
+
+  create_resources ( 'radius::vhost', $vhosts )
 }
