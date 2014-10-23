@@ -4,6 +4,10 @@ ldap {
   server = "<%= @server %>"
   basedn = "<%= @basedn %>"
   filter = "<%= @filter %>"
+<%- if @identity and @password -%>
+  identity = "<%= @identity %>"
+  password = "<%= @password %>"
+<%- end -%>
 
 # TODO: SSL Support
 #  tls {

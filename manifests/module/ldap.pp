@@ -6,6 +6,8 @@ class radius::module::ldap (
   $server,
   $basedn,
   $filter,
+  $identity = undef,
+  $password = undef,
 ) inherits radius {
 
   package { 'radius-ldap':
