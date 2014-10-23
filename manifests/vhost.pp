@@ -7,6 +7,8 @@ define radius::vhost (
   $authorize    = [],
   $authenticate = [],
   $post_auth    = [],
+  $listens      = {},
+  $clients      = {},
 ) {
 
   # The base class must be included first because it is used by parameter defaults
@@ -52,5 +54,12 @@ define radius::vhost (
     target  => "${::radius::config}/sites-available/${name}",
     notify  => Class['radius::service'],
   }
+
+  # Create related objects
+  validate_hash ( $clients ) 
+  create_resources ( 'radius::vhost::client', $clients, { vhost => $name } )
+  
+  validate_hash ( $listens ) 
+  create_resources ( 'radius::vhost::listen', $listens, { vhost => $name } )
 
 }
